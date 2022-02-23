@@ -1,8 +1,57 @@
 body {
-  padding: 50px;
+
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
+}
+
+.logo{
+  height: 100px;
+  width: 100px;
+  padding-bottom: 10px;
+  padding-left: : 50px;
+}
+
+.logo-area{
+  background-color: grey;
+  padding-left: 830px;
+  position: relative;
+  padding-top: 20px;
+}
+
+.row{
+  position: absolute;
+  left: 720px;
+  font-size: 28px;
+  color: white;
+  font-style: oblique;
+  font-family: sans-serif;
+  padding-top: 2px;
+}
+
+.nav-item{
+  padding-left: 50px;
+  background-color: #e8c900;
+  border: 2px solid;
+  border-radius: 12px;
+  border-width: medium;
+  padding: 2px;
+}
+
+.col-sm-12 col-md-6 col-lg-2{
+  padding: 2px;
+}
+
+footer{
+  background-color: #a6a6a6;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-contact{
+  text-align: center;
 }
