@@ -6,6 +6,16 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var loginRouter = require('./routes/login');
+var signupRouter = require('./routes/signup');
+var recommendationRouter = require('./routes/recommendation');
+var desktopRouter = require('./routes/desktop');
+var laptopRouter = require('./routes/laptop');
+var gpuRouter = require('./routes/gpu');
+var cpuRouter = require('./routes/cpu');
+var coolingRouter = require('./routes/cooling');
+var ramRouter = require('./routes/ram');
+var storageRouter = require('./routes/storage');
 
 var app = express();
 
@@ -21,6 +31,17 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/login', loginRouter);
+app.use('/signup', signupRouter);
+app.use('/recommendation', recommendationRouter);
+app.use('/desktop', desktopRouter);
+app.use('/laptop', laptopRouter);
+app.use('/gpu', gpuRouter);
+app.use('/cpu', cpuRouter);
+app.use('/cooling', coolingRouter);
+app.use('/ram', ramRouter);
+app.use('/storage', storageRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
