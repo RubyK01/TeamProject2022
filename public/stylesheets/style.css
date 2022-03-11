@@ -268,4 +268,12 @@ footer{
   .textcolour{
   	color: #000000;
   }
+  
+.toggle{
+	 padding-left: 50px;
+    background-color: #e8c900;
+    padding: 2px;
+    
+}
+
 }
