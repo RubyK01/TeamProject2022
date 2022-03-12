@@ -17,6 +17,7 @@ var coolingRouter = require('./routes/cooling');
 var ramRouter = require('./routes/ram');
 var storageRouter = require('./routes/storage');
 var accountDetailsRouter= require('./routes/account');
+var cartRouter = require('./routes/cart');
 
 var app = express();
 
@@ -43,6 +44,7 @@ app.use('/cooling', coolingRouter);
 app.use('/ram', ramRouter);
 app.use('/storage', storageRouter);
 app.use('/account', accountDetailsRouter);
+app.use('/cart', cartRouter);
 
 
 // catch 404 and forward to error handler
