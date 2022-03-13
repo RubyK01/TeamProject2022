@@ -18,6 +18,8 @@ var ramRouter = require('./routes/ram');
 var storageRouter = require('./routes/storage');
 var accountDetailsRouter= require('./routes/account');
 var cartRouter = require('./routes/cart');
+var accounInfoRouter= require('./routes/accountInfo');
+var checkRouter= require('./routes/checkOut');
 
 var app = express();
 
@@ -45,7 +47,8 @@ app.use('/ram', ramRouter);
 app.use('/storage', storageRouter);
 app.use('/account', accountDetailsRouter);
 app.use('/cart', cartRouter);
-
+app.use('/accountInfo', accounInfoRouter);
+app.use('/checkOut', checkRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -63,4 +66,5 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+console.log("localhost:3000");
 module.exports = app;

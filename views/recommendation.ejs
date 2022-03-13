@@ -34,10 +34,10 @@
               <a class="nav-link" href="#">Features</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Cart</a>
+              <a class="nav-link" href="/cart">Cart</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Account</a>
+              <a class="nav-link" href="/account">Account</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/recommendation">Recommendation</a>
@@ -60,50 +60,36 @@
         </div>
       </div>
     </nav>
-    </div class="content">
+    <div class="content">
       <div class="main">
-	  <h2><b>Reccomendations page</b></h2>
-
-		<form action="/action_page.php">
-		<label for="fname">Search for item:</label><br>
-		<input type="text" id="fname" name="fname"><br><br>
-		<input type="submit" value="Submit">
-		</form>
-		
-		<h2>Product analyzer tool</h2>
-
-<p>Unsure of what your looking for? Use our tool below to add and specify exactly what you are looking for in following drop down menus and we will do the rest.:</p>
-
-<form action="/action_page.php">
-  <label for="Recommendation">What will you use your PC for?:</label>
-  <select id="Recommendation" name="products">
-    <option value="volvo">Gaming/Streaming</option>
-    <option value="saab">General office work</option>
-    <option value="fiat" selected>Web browsing</option>
-  </select>
-</form>
-<form action="/action_page.php">
-  <label for="Recommendation">What is your price range?:</label>
-  <select id="Recommendation" name="products">
-    <option value="volvo">€200/400</option>
-    <option value="saab">€400/800</option>
-    <option value="fiat" selected>€800+</option>
-  </select>
-</form>
-<form action="/action_page.php">
-  <label for="Recommendation">What will you use your PC for?:</label>
-  <select id="Recommendation" name="products">
-    <option value="volvo">Gaming/Streaming</option>
-    <option value="saab">General office work</option>
-    <option value="fiat" selected>Web browsing</option>
-  </select>
-  <input type="submit">
-</form>
-
-
-</body>
-</html>
-
+        <center>
+	       <h2><b>Reccomendations</b></h2>
+         <p>Unsure of what your looking for? Use our tool below to add and specify exactly what you are looking for in following drop down menus and we will do the rest.:</p>
+        <form action="/action_page.php">
+          <label for="Recommendation">Do you want a desktop or laptop?:</label>
+          <select id="Recommendation" name="products">
+            <option value="volvo">desktop</option>
+            <option value="saab">laptop</option>
+          </select>
+        </form>
+        <form action="/action_page.php">
+          <label for="Recommendation">What is your price range?:</label>
+          <select id="Recommendation" name="products">
+            <option value="volvo">€200/400</option>
+            <option value="saab">€400/800</option>
+            <option value="fiat" selected>€800+</option>
+          </select>
+        </form>
+        <form action="/action_page.php">
+          <label for="Recommendation">What will you use your PC for?:</label>
+          <select id="Recommendation" name="products">
+            <option value="volvo">Gaming/Streaming</option>
+            <option value="saab">General office work</option>
+            <option value="fiat" selected>Web browsing</option>
+          </select>
+          <input type="submit">
+        </form>
+      </center>
       </div>
     </div>
     <div class="footer">

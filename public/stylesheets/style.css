@@ -128,33 +128,6 @@ div.accountTabs img{
   text-align: center;
   background-color: #C6AC01;
 }
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
-
-*{
-
-	font-family: 'Comfortaa', cursive;
-
-	margin: 0;
-
-	padding: 0;
-
-	box-sizing: border-box;
-
-}
-
-.container{
-
-	max-width: 1200px;
-
-	margin: 0 auto;
-
-}
-
-.container > h1{
-
-	padding: 20px 0;
-
-}
 
 .cart{
 
@@ -169,7 +142,7 @@ div.accountTabs img{
 }
 
 .product{
-	
+
 	display: flex;
 
 	width: 100%;
@@ -181,7 +154,7 @@ div.accountTabs img{
 	border: 1px solid silver;
 
 	margin-bottom: 20px;
-	
+
 	background-color: #f5f5f2;
 
 }
@@ -289,7 +262,7 @@ div.accountTabs img{
 	border: 1px solid silver;
 
 	border-radius: 5px;
-	
+
 	background-color: #f5f5f2;
 
 }
@@ -303,7 +276,7 @@ div.accountTabs img{
 	margin-bottom: 30px;
 
 	font-size: 20px;
-	
+
 
 }
 
@@ -328,7 +301,7 @@ div.accountTabs img{
 .cart-total a:hover{
 
 	background-color: white;
-	
+
 	color: black;
 
 	font-weight: 550;
@@ -337,6 +310,11 @@ div.accountTabs img{
 
 }
 
+.checked{
+	color: red;
+}
+
+}
 
 /* Tablet screen */
 @media only screen and (max-width: 800px) {
@@ -422,6 +400,11 @@ div.accountTabs img{
   .textcolour{
   	color: #000000;
   }
+
+  .checked{
+  	color: red;
+  }
+
 }
 
 /* Phone screen */
@@ -516,38 +499,4 @@ div.accountTabs img{
 }
 .checked{
 	color: red;
-
 }
-
-*
-{
-	margin: 0;
-	padding: 0;
-}
-body{
-	display: flex;
-	justify-content: center;
-}
-.container{
-	position: relative;
-	width:1000px;
-	display: flex;
-	justify-content:center;
-	flex-wrap: wrap;
-	padding; 30px;
-	margin-top: 8%;
-}
-
-.container .card{
-	width:308px;
-	position: relative;
-	height: 400px;
-	margin:30px 10px;
-	padding: 20px 15px;
-	display: flex;
-	flex-direction: column;
-	box-shadow: 0.5px 10px;
-	margin-top: 5%;
-	
-
-
