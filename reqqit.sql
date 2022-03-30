@@ -6,7 +6,7 @@ use reqqit;
 
 -- Made by Tomas
 create table customer(
-customerID int not null primary key,
+customerID int not null primary key auto_increment,
 fName varchar(255) not null,
 lName varchar(255) not null,
 userName varchar(255) not null,
@@ -25,7 +25,7 @@ foreign key (customerID) references customer(customerID) on delete cascade
 );
 
 create table products(
-productID int not null primary key,
+productID int not null primary key auto_increment,
 productName varchar(255) not null,
 price double not null,
 decription varchar(500) not null,
@@ -56,3 +56,5 @@ expiray date,
 customerID int not null,
 foreign key (customerID) references customer(customerID) on delete cascade
 );
+
+insert into customer(fName, Lname, userName, email, password) values ("John","Cena","Jcena","johnc@email.com","password");
