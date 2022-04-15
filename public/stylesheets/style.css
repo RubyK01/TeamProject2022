@@ -3,7 +3,7 @@ html,body {
   min-height: 400px;
   margin-bottom: 10%;
   clear: both;
-  height: 150%;
+  height: 300%;
 }
 
 a {
@@ -128,6 +128,27 @@ div.accountTabs img{
   text-align: center;
   background-color: #C6AC01;
 }
+.productTabs{
+  margin: 20px;
+  border: 1px solid black;
+  width: 360px;
+  display: inline-block;
+}
+
+.productTabs:hover{
+  border: 4px solid black;
+}
+
+div.productTabs img{
+  width: 100%;
+  height: auto%;
+}
+
+.productTabDetail{
+  padding: 20px;
+  text-align: center;
+  background-color: #C6AC01;
+}
 
 .cart{
 
@@ -185,7 +206,7 @@ div.accountTabs img{
 
 }
 
-.product-info{
+.productinfo{
 
 	padding: 20px;
 
@@ -500,3 +521,4 @@ div.accountTabs img{
 .checked{
 	color: red;
 }
+

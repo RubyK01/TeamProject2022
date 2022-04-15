@@ -74,9 +74,9 @@
 
 			<div class="product">
 
-				<img src="images/i3processor.jpg">
+				<img src="images/i3processor.png">
 
-				<div class="product-info">
+				<div class="productinfo">
 
 					<h3 class="product-name">Intel Core i3-12100F Quad Core 3.30GHz CPU Alder Lake Processor - LGA 1700</h3>
 
@@ -100,9 +100,9 @@
 
 			<div class="product">
 
-				<img src="images/1tbharddrive.jpg">
+				<img src="images/1tbharddrive.png">
 
-				<div class="product-info">
+				<div class="productinfo">
 
 					<h3 class="product-name">WD Blue WD10EZEX - Hard drive - 1 TB - internal - 3.5" - SATA 6Gb/s - 7200 rpm - buffer: 64 MB - for My Cloud EX2</h3>
 
@@ -126,17 +126,55 @@
 
 			<div class="product">
 
-				<img src="images/Ram.jpg">
+				<img src="images/Ram.png">
 
-				<div class="product-info">
+				<div class="productinfo">
 					<h3 class="product-name">16GB Corsair Vengeance LPX DDR4 3200MHz PC4-25600 CL16 Dual Channel Kit (2x 8GB) Black</h3>
 					<h4 class="product-price">€75</h4>
 					<h4 class="product-type">RAM</h4>
 					<p class="product-quantity">Qnt: <input value="1" name="">
 					<p class="product-remove">
 						<i class="fa fa-trash" aria-hidden="true"></i>
-						<span class="remove">Remove</span>
+						<span class="remove">Remove</span> 
 					</p>
+	
+						<script>
+	var removeCartItems = document.getElementsByClassName('remove')
+	console.log(removeCartItems)
+	for (var i = 0; i < removeCartItems.length; i++) {
+	var button = removeCartItems[i] 
+	button.addEventListener('click', function(event){
+		var buttonClicked = event.target
+		buttonClicked.parentElement.parentElement.parentElement.remove()
+		updateCartTotal()
+	
+	})
+	
+	}
+
+	
+	function updateCartTotal() {
+		var cartItemContainer = document.getElementsByClassName('productinfo')[1]
+		var rows = cartItemContainer.getElementsByClassName('productinfo')
+		var total = 0
+		for (var i = 0; i < productinfo.length; i++) {
+			var productinfo = productinfo[i]
+			var priceElement = cartRow.getElementsByClassName('product-price')[0]
+			var quantityElement = cartRow.getElementsByClassName('product-quantity')
+			[0]
+			var price = priceElement.innerText
+			console.log(price)
+			var price = parsefloat(priceElement.innerText.replace('€', ''))
+			var quantity = quantityElement.value
+			total = total + (price * quantity)
+			
+			
+		}
+		document.getElementsByClassName('cart-total')[0].innerText = '€' + total
+		}
+	
+
+	</script>
 				</div>
 			</div>
 		</div>
@@ -171,5 +209,6 @@
       </footer>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+
   </body>
 </html>
