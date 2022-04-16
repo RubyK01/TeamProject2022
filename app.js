@@ -3,6 +3,9 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var session = require('express-session');
+var MySql = require('mysql');
+var connection_details = require("./modules/connection_details");
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -26,13 +29,22 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-
+app.use(session({
+	// key: 'user_sid',
+	secret: 'mySecret',
+	resave: false,
+	saveUninitialized: true,
+	cookie: {
+		expires: 700000, //cookie is set to expire after a week
+	}
+}));
 app.use(logger('dev'));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+//website pages
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/login', loginRouter);
@@ -50,6 +62,27 @@ app.use('/cart', cartRouter);
 app.use('/accountInfo', accounInfoRouter);
 app.use('/checkOut', checkRouter);
 
+app.use(function(req, res, next){ // https://stackoverflow.com/questions/12457615/expressjs-how-to-show-hide-a-div-in-case-user-its-logged
+  if (req.session.user) {
+    res.locals.user = req.session.user
+  }
+  next();
+});
+
+app.get('/logout', (req, res) => {
+  if (req.session) {
+    req.session.destroy(err => {
+      if (err) {
+        res.status(400).send('Unable to log out')
+      } else {
+        res.redirect("/");
+      }
+    });
+  } else {
+    res.end()
+  }
+});
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
@@ -66,5 +99,6 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-console.log("localhost:3000");
+console.log("App is listening on port: 3000");
+console.log("Go to localhost:3000 in browser.");
 module.exports = app;

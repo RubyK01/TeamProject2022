@@ -1,6 +1,6 @@
-drop database if exists reqqit;
+drop database `reqqit`;
 
-create database reqqit;
+create database if not exists`reqqit` default character set utf8 collate utf8_general_ci;
 
 use reqqit;
 
@@ -11,7 +11,7 @@ fName varchar(255) not null,
 lName varchar(255) not null,
 userName varchar(255) not null,
 email varchar(255) not null,
-password varchar(255) not null
+pass_word varchar(255) not null
 );
 
 create table address(
@@ -57,4 +57,4 @@ customerID int not null,
 foreign key (customerID) references customer(customerID) on delete cascade
 );
 
-insert into customer(fName, Lname, userName, email, password) values ("John","Cena","Jcena","johnc@email.com","password");
+insert into customer(fName, Lname, userName, email, pass_word) values ("John","Cena","Jcena","johnc@email.com","password");
