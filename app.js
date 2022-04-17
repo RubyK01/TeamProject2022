@@ -73,7 +73,7 @@ app.get('/logout', (req, res) => {
   if (req.session) {
     req.session.destroy(err => {
       if (err) {
-        res.status(400).send('Unable to log out')
+        redirect("/account"+"?&error=Cannot log out.");
       } else {
         res.redirect("/");
       }

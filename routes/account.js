@@ -13,9 +13,11 @@ router.get('/', function(req, res, next) {
     res.redirect("/login"+"?&error=Please login to view page!");
   }
   var userName = req.session.username;
+  var error = req.query.error;
   res.render('account',
   { title: 'account',
-    userName: userName 
+    userName: userName,
+    error: error
   });
 });
 
