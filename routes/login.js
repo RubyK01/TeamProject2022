@@ -36,6 +36,7 @@ router.post('/auth', async function(req, res) { //https://codeshack.io/basic-log
       console.log("check: "+check)
       pass_word = pass
       if(check){
+        //I saved the user details in the session for later use.
         req.session.user = results[0]; //saved the whole query as an object just incase.
         req.session.userID = results[0].customerID;
         req.session.firstName = results[0].fName;
@@ -50,6 +51,12 @@ router.post('/auth', async function(req, res) { //https://codeshack.io/basic-log
          console.log(req.session); //Check the termincal for session details i.e cookie and user details.
          res.redirect('/account');
       }
+      else{
+       //If the inputed details are incorrect or the account doesnt exist,
+       //the user is taken back to the login page and is greeted with the error below.
+       //Had to to split the redirect into two strings as it would cause a 404 error when trying to login again.
+       res.redirect("/login"+"?&error=Details provided are invalid!");
+     }
     }
   })
   console.log(pass_word)
