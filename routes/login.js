@@ -66,6 +66,4 @@ router.post('/auth', async function(req, res) { //https://codeshack.io/basic-log
   console.log(pass_word)
 })
 
-
-
 module.exports = router;
