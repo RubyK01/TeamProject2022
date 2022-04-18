@@ -23,6 +23,7 @@ router.get('/', function(req, res, next) {
 });
 
 //for creating an account
+// The Signup function is async as we expect more than one user would be using it.
 router.post('/create', async function (req, res, next){
   var error = req.query.error;
   var fName = req.body.fName;
@@ -36,7 +37,8 @@ router.post('/create', async function (req, res, next){
     password: connection_details.password,
     database: connection_details.database
   });
-  if(pass_word.includes("0") || pass_word.includes("1") || pass_word.includes("2") || pass_word.includes("3") || pass_word.includes("4") || pass_word.includes("5") || pass_word.includes("6") || pass_word.includes("7") || pass_word.includes("8") || pass_word.includes("9") && email.includes("@")){
+  if(pass_word.includes("0") || pass_word.includes("1") || pass_word.includes("2") || pass_word.includes("3") || pass_word.includes("4") || pass_word.includes("5") || pass_word.includes("6") || pass_word.includes("7") || pass_word.includes("8") || pass_word.includes("9") && email.includes("@") && pass_word.length <= 10){
+    // Where I learned how to use bcrypt https://www.npmjs.com/package/bcrypt
     var salt = await bcrypt.genSaltSync(5); //the amount of times I want to hash a password
     pass_word = await bcrypt.hashSync(pass_word,salt);
     connection.query("insert into customer(fName, lName, userName, email, pass_word) values ((?), (?), (?), (?), (?));", [fName, lName, userName, email, pass_word]);
