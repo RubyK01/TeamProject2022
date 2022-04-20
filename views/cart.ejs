@@ -78,15 +78,15 @@
 
 				<div class="productinfo">
 
-					<h3 class="product-name">Intel Core i3-12100F Quad Core 3.30GHz CPU Alder Lake Processor - LGA 1700</h3>
+					<h3 class="productname">Intel Core i3-12100F Quad Core 3.30GHz CPU Alder Lake Processor - LGA 1700</h3>
 
-					<h4 class="product-price">€99.99</h4>
+					<h4 class="productprice">€99.99</h4>
 
-					<h4 class="product-type">CPU</h4>
+					<h4 class="producttype">CPU</h4>
 
-					<p class="product-quantity">Qnt: <input value="1" name="">
+					<p class="productquantity">Qnt: <input value="1" name="">
 
-					<p class="product-remove">
+					<p class="productremove">
 
 						<i class="fa fa-trash" aria-hidden="true"></i>
 
@@ -104,15 +104,15 @@
 
 				<div class="productinfo">
 
-					<h3 class="product-name">WD Blue WD10EZEX - Hard drive - 1 TB - internal - 3.5" - SATA 6Gb/s - 7200 rpm - buffer: 64 MB - for My Cloud EX2</h3>
+					<h3 class="productname">WD Blue WD10EZEX - Hard drive - 1 TB - internal - 3.5" - SATA 6Gb/s - 7200 rpm - buffer: 64 MB - for My Cloud EX2</h3>
 
-					<h4 class="product-price">€44.99</h4>
+					<h4 class="productprice">€44.99</h4>
 
-					<h4 class="product-type">Storage</h4>
+					<h4 class="producttype">Storage</h4>
 
-					<p class="product-quantity">Qnt: <input value="1" name="">
+					<input class="productquantity"Qnt: <input value="1" name="">
 
-					<p class="product-remove">
+					<p class="productremove">
 
 						<i class="fa fa-trash" aria-hidden="true"></i>
 
@@ -129,17 +129,17 @@
 				<img src="images/Ram.png">
 
 				<div class="productinfo">
-					<h3 class="product-name">16GB Corsair Vengeance LPX DDR4 3200MHz PC4-25600 CL16 Dual Channel Kit (2x 8GB) Black</h3>
-					<h4 class="product-price">€75</h4>
-					<h4 class="product-type">RAM</h4>
-					<p class="product-quantity">Qnt: <input value="1" name="">
-					<p class="product-remove">
+					<h3 class="productname">16GB Corsair Vengeance LPX DDR4 3200MHz PC4-25600 CL16 Dual Channel Kit (2x 8GB) Black</h3>
+					<h4 class="productprice">€75</h4>
+					<h4 class="producttype">RAM</h4>
+					<input class="productquantity"Qnt: <input value="1" name="">
+					<p class="productremove">
 						<i class="fa fa-trash" aria-hidden="true"></i>
 						<span class="remove">Remove</span>
 					</p>
 
 						<script>
-	var removeCartItems = document.getElementsByClassName('remove')
+						var removeCartItems = document.getElementsByClassName('remove')
 	console.log(removeCartItems)
 	for (var i = 0; i < removeCartItems.length; i++) {
 	var button = removeCartItems[i]
@@ -151,28 +151,29 @@
 	})
 
 	}
+						
+						function updateCartTotal(){
+					var cartItemContainer = document.getElementsByClassName('products')[0]
+					var cartRows = cartItemContainer.getElementsByClassName('product')
+					var total = 0
+					for (var i = 0; i < cartRows.length; i++) {
+						var cartRow = cartRows[i]
+						var priceElement = cartRow.getElementsByClassName('productprice')[0]
+						var quantityElement = cartRow.getElementsByClassName('productquantity')
+						[0]
+						console.log(priceElement, quantityElement)
+						var price = parseFloat(priceElement.innerText.replace('€', ''))
+						var quantity = quantityElement.value
+					
+						total = total + (price * quantity)
+					}
+					document.getElementsByClassName('totalprice')[0].innerText = '€' + total
+				}
+						
+	
 
 
-	function updateCartTotal() {
-		var cartItemContainer = document.getElementsByClassName('productinfo')[1]
-		var rows = cartItemContainer.getElementsByClassName('productinfo')
-		var total = 0
-		for (var i = 0; i < productinfo.length; i++) {
-			var productinfo = productinfo[i]
-			var priceElement = cartRow.getElementsByClassName('product-price')[0]
-			var quantityElement = cartRow.getElementsByClassName('product-quantity')
-			[0]
-			var price = priceElement.innerText
-			console.log(price)
-			var price = parsefloat(priceElement.innerText.replace('€', ''))
-			var quantity = quantityElement.value
-			total = total + (price * quantity)
-
-
-		}
-		document.getElementsByClassName('cart-total')[0].innerText = '€' + total
-		}
-
+	
 
 	</script>
 				</div>
@@ -181,7 +182,7 @@
 		<div class="cart-total">
 			<p>
 				<span>Total Price</span>
-				<span>€219.98</span>
+				<span class="totalprice">€219.98</span>
 			</p>
 			<p>
 				<span>Number of Items</span>

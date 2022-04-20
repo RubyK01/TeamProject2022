@@ -216,13 +216,13 @@ div.productTabs img{
 
 }
 
-.product-name, .product-price, .product-offer{
+.productname, .productprice, .productoffer{
 
 	margin-bottom: 20px;
 
 }
 
-.product-remove{
+.productremove{
 
 	position: absolute;
 
@@ -242,7 +242,7 @@ div.productTabs img{
 
 }
 
-.product-remove:hover{
+.productremove:hover{
 
 	background-color: white;
 
@@ -254,7 +254,7 @@ div.productTabs img{
 
 }
 
-.product-quantity > input{
+.productquantity , input{
 
 	width: 40px;
 
