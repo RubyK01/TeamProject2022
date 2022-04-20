@@ -18,21 +18,21 @@ router.get('/', function(req, res, next) {
   if(!req.session.loggedIn === true){
     res.redirect("/login"+"?&error=Please login to view page!");
   }
+  //To grab session details to display.
   var customer = req.session;
   var email = req.session.email;
   var fName = req.session.firstName;
   var lName = req.session.lastName;
   var userName = req.session.username;
-  var password = req.session.password;
   console.log(customer);
   res.render('accountInfo', {
+    //Variables to display.
     title: 'Info',
     customer: customer,
     email: email,
     fName: fName,
     lName: lName,
-    userName: userName,
-    password: password
+    userName: userName
    });
 });
 

@@ -150,6 +150,11 @@ div.productTabs img{
   background-color: #C6AC01;
 }
 
+.card-img{
+  width: 50%;
+  height:50%;
+}
+
 .cart{
 
 	display: flex;
@@ -521,4 +526,3 @@ div.productTabs img{
 .checked{
 	color: red;
 }
-

@@ -41,12 +41,18 @@
             <li class="nav-item">
               <a class="nav-link" href="/recommendation">Recommendation</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/login">Login</a>
-            </li>
-            <form  action="/logout" method="get">
-              <button class="reuseabale" type="submit" value = "submit">Logout</button>
-            </form>
+            <%if(!loggedIn){ %> <!--To hide the login button after user has logged in -->
+              <li class="nav-item">
+                <a class="nav-link" href="/login">Login</a>
+              </li>
+            <% } %>
+            <%if(loggedIn){ %> <!--To show the logout button after user has logged in -->
+              <li class="nav-item">
+              <form  action="/logout" method="get">
+                <a class ="nav-link"><button class="linkButton" type="submit" value = "submit">Logout</button></a>
+              </form>
+              </li>
+            <% } %>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Products
@@ -105,11 +111,11 @@
           <div class="accountTabs">
             <div class="tabDetail">Address</div>
             <!-- https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pinterest.com%2Fpin%2F415527503124413700%2F&psig=AOvVaw1UaaXu-Xk0Moj7AJcBw-2y&ust=1650392496084000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCNiF9aidnvcCFQAAAAAdAAAAABAd -->
-            <a href="#"><img src="../images/house.png" alt="address"></a>
+            <a href="/address"><img src="../images/house.png" alt="address"></a>
           </div>
           <div class="accountTabs">
             <div class="tabDetail">Sell</div>
-            <a href="#"><img src="../images/receipt.png" alt="receipt"></a>
+            <a href="/uploadProduct"><img src="../images/receipt.png" alt="receipt"></a>
           </div>
         </center>
     	</div>

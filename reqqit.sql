@@ -1,4 +1,4 @@
-drop database `reqqit`;
+DROP DATABASE IF EXISTS `reqqit`;
 
 create database if not exists`reqqit` default character set utf8 collate utf8_general_ci;
 
@@ -28,14 +28,15 @@ create table products(
 productID int not null primary key auto_increment,
 productName varchar(255) not null,
 price double not null,
-decription varchar(500) not null,
-stock int
+customerID int not null,
+foreign key (customerID) references customer(customerID) on delete cascade 
 );
 
 create table productIMG(
-image blob,  -- blob is used for image storage 
-productID int not null,
-foreign key (productID) references products(productID) on delete cascade 
+image varchar(800) not null,
+productID int not null auto_increment primary key,
+customerID int not null,
+foreign key (customerID) references customer(customerID) on delete cascade 
 );
 
 create table reciepts(

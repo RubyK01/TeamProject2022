@@ -67,10 +67,17 @@
         <br>
         <center>
           <h3>Account Info</h3>
-        <form class="form-inline">
-            <div class="form-group mb-2">
-              <input type="text" class="form-control"  name = "email" placeholder = "<%= email %>"readonly>
-            </div>
+          <!-- https://getbootstrap.com/docs/4.3/components/card/ -->
+          <div class="card" style="width: 18rem;">
+          <!-- image ref: https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.deviantart.com%2Fkarmaanddestiny%2Fart%2FDefault-user-icon-4-858661084&psig=AOvVaw2L4gdADvBaQljlRvRb1908&ust=1650541951788000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCPicnorKovcCFQAAAAAdAAAAABAD -->
+          <img src="../userSubmittedProducts/default.jpg" class="card-img-top" alt="user">
+          <div class="card-body">
+            <!-- Render user details -->
+            <p class="user"><%= userName %></p>
+            <p class="card-text-user">Name: <%=fName %> <%=lName %></p>
+            <p class="card-text-user">Contact: <%=email %></p>
+          </div>
+        </div>
         </center>
     	</div>
     </div>

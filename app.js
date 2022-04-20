@@ -6,6 +6,7 @@ var logger = require('morgan');
 var session = require('express-session');
 var MySql = require('mysql');
 var connection_details = require("./modules/connection_details");
+var upload = require('express-fileupload');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -23,6 +24,8 @@ var accountDetailsRouter= require('./routes/account');
 var cartRouter = require('./routes/cart');
 var accounInfoRouter= require('./routes/accountInfo');
 var checkRouter= require('./routes/checkOut');
+var uploadProductRouter = require('./routes/uploadProduct');
+var addressRouter = require('./routes/address');
 
 var app = express();
 
@@ -30,7 +33,6 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(session({
-	// key: 'user_sid',
 	secret: 'mySecret',
 	resave: false,
 	saveUninitialized: true,
@@ -43,6 +45,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(upload())
 
 //website pages
 app.use('/', indexRouter);
@@ -61,6 +64,8 @@ app.use('/account', accountDetailsRouter);
 app.use('/cart', cartRouter);
 app.use('/accountInfo', accounInfoRouter);
 app.use('/checkOut', checkRouter);
+app.use('/uploadProduct', uploadProductRouter);
+app.use('/address',addressRouter);
 
 app.use(function(req, res, next){ // https://stackoverflow.com/questions/12457615/expressjs-how-to-show-hide-a-div-in-case-user-its-logged
   if (req.session.user) {
