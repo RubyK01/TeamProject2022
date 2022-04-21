@@ -51,7 +51,7 @@
                 Products
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-				<li><a class="dropdown-item" href="/General Products">General Products</a></li>
+				        <li><a class="dropdown-item" href="/generalProducts">General Products</a></li>
                 <li><a class="dropdown-item" href="/desktop">Desktop</a></li>
                 <li><a class="dropdown-item" href="/laptop">Laptop</a></li>
                 <li><a class="dropdown-item" href="/gpu">GPU</a></li>
@@ -68,7 +68,7 @@
     <div class="content">
       <div class="main">
 	   <h1 align="center"><b>Shopping Cart</b><h1>
-	  
+
 
 
 <div class="container">
@@ -76,17 +76,17 @@
 	<div class="cart">
 		<div class="products">
 
-			
 
-			
 
-			
+
+
+
 		</div>
-		
-					
 
-	
-		
+
+
+
+
 		<div class="cart-total">
 			<p>
 				<span>Total Price</span>
@@ -924,7 +924,7 @@
 			 <div class="productTabDetail"><a class = "title" href="#">Dell Latitude 3310 Intel i5 8GB DDR4-SDRAM 13.3-inch 256GB SSD Touchscreen Laptop</a>
               <br>
              <span class = "category"> <h5>Laptops and Notebooks</h5> </span>
-    					 <h3><b>€849.99</b></h3> 
+    					 <h3><b>€849.99</b></h3>
 						<span class="fa fa-star fa-2x checked"></span>
     						<span class="fa fa-star fa-2x checked"></span>
     						<span class="fa fa-star fa-2x checked"></span>
@@ -932,17 +932,17 @@
     						<span class="fa fa-star fa-2x"></span>
     					<h5>2 reviews</h5>
               <button class="reuseabale" type="button">Add to cart</button>
-    					 
+
             </div>
-			
+
           </div>
-		  
+
 			<script>
 				var addToCartButtons = document.getElementsByClassName('reuseabale')
 				for(var i = 0; i < addToCartButtons.length; i++) {
 					var button = addToCartButtons[i]
 					button.addEventListener('click', addTocartClicked)
-					
+
 				}
 					function updateCartTotal(){
 					var cartItemContainer = document.getElementsByClassName('cart')[0]
@@ -957,15 +957,15 @@
 						var price = parseFloat(priceElement.innerText.replace('€', ''))
 						var quantity = quantityElement.value
 						console.log(price * quantity)
-					
+
 						total = total + (price * quantity)
 					}
 					document.getElementsByClassName('totalprice')[0].innerText = '€' + total
 				}
-						
-				
-				
-				
+
+
+
+
 				function addTocartClicked(event) {
 				var button = event.target
 				var shopItem = button.parentElement.parentElement
@@ -973,12 +973,12 @@
 				var title = shopItem.getElementsByClassName('title')[0].innerText
 				var price = shopItem.getElementsByTagName('h3')[0].innerText
 				var category = shopItem.getElementsByClassName('category')[0].innerText
-				
+
 				console.log(title, price, category, ImgSrc)
 				addItemToCart(title, price, category, ImgSrc)
-				
+
 				}
-				
+
 				function addItemToCart(title, price, category, ImgSrc) {
 					var cartRow = document.createElement('div')
 					var cartItems = document.getElementsByClassName('products')[0]
@@ -1008,10 +1008,10 @@
 				</div>
 
 			</div>`
-			
+
 					cartRow.innerHTML = cartRowContents
 					cartItems.append(cartRow)
-					
+
 					var removeCartItems = document.getElementsByClassName('remove')
 					console.log(removeCartItems)
 					for (var i = 0; i < removeCartItems.length; i++) {
@@ -1024,13 +1024,13 @@
 	})
 
 	}
-					
+
 				}
-				
-				
-				
+
+
+
 				</script>
-			
+
 
 					</div>
 					</div>
@@ -1039,7 +1039,7 @@
 			</div>
       </div>
     </div>
-  		
+
     <div class="footer">
       <footer>
         <center>

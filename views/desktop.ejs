@@ -51,12 +51,12 @@
                 Products
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-				<li><a class="dropdown-item" href="/General Products">General Products</a></li>
+				        <li><a class="dropdown-item" href="/generalProducts">General Products</a></li>
                 <li><a class="dropdown-item" href="/desktop">Desktop</a></li>
                 <li><a class="dropdown-item" href="/laptop">Laptop</a></li>
                 <li><a class="dropdown-item" href="/gpu">GPU</a></li>
                 <li><a class="dropdown-item" href="/cpu">CPU</a></li>
-                <li><a class="dropdown-item" href="/cooling">Mother board</a></li>
+                <li><a class="dropdown-item" href="/motherBoard">Mother board</a></li>
                 <li><a class="dropdown-item" href="/ram">Ram</a></li>
                 <li><a class="dropdown-item" href="/storage">HardDisks/SSD</a></li>
               </ul>
@@ -68,9 +68,9 @@
     <div class="content">
       <div class="main">
   		<br>
-     
+
 	  <h1 align="center"><b>Shopping Cart</b><h1>
-	  
+
 
 
 <div class="container">
@@ -78,17 +78,17 @@
 	<div class="cart">
 		<div class="products">
 
-			
 
-			
 
-			
+
+
+
 		</div>
-		
-					
 
-	
-		
+
+
+
+
 		<div class="cart-total">
 			<p>
 				<span>Total Price:</span>
@@ -111,7 +111,7 @@
 	<br>
 			<h5><b>Welcome to our products page.</b></h5>
 			<h5><b>Here you can browse our entire catalog of products when you have found an item you would like to purchase please select the add to cart button.</b></h5>
-	
+
 			<div class="container">
 
          <div class="productTabs">
@@ -130,11 +130,11 @@
               <button class="reuseabale" href="#" type="button">Add to cart</button>
             </div>
           </div>
-          
-         
-         
-          
-          
+
+
+
+
+
 		    <div class="productTabs">
 
             <a href="/accountInfo"><img src="images/desktop5.png"></a>
@@ -151,7 +151,7 @@
               <button class="reuseabale" type="button">Add to cart</button>
             </div>
           </div>
-		 
+
 		  <div class="productTabs">
 
             <a href="/accountInfo"><img src="images/desktop12.png"></a>
@@ -169,9 +169,9 @@
               <button class="reuseabale" type="button">Add to cart</button>
             </div>
           </div>
-		 
-		
-		  
+
+
+
 		  <div class="productTabs">
 
             <a href="/accountInfo"><img src="images/desktop4.png"></a>
@@ -188,7 +188,7 @@
               <button class="reuseabale" href="#" type="button">Add to cart</button>
             </div>
           </div>
-		  
+
 		  <div class="productTabs">
 
             <a href="/accountInfo"><img src="images/gamingpc.png"></a>
@@ -205,7 +205,7 @@
               <button class="reuseabale" type="button">Add to cart</button>
             </div>
           </div>
-		  
+
 		  <div class="productTabs">
 
             <a href="/accountInfo"><img src="images/desktop10.png"></a>
@@ -238,7 +238,7 @@
               <button class="reuseabale" type="button">Add to cart</button>
             </div>
           </div>
-		   
+
 		 <div class="productTabs">
 
             <a href="/accountInfo"><img src="images/desktop1.png"></a>
@@ -256,18 +256,18 @@
               <button class="reuseabale" type="button">Add to cart</button>
             </div>
           </div>
-		  
-		  
+
+
 			<script>
 				var addToCartButtons = document.getElementsByClassName('reuseabale')
 				for(var i = 0; i < addToCartButtons.length; i++) {
 					var button = addToCartButtons[i]
 					button.addEventListener('click', addTocartClicked)
-				
-										
+
+
 				}
-				
-				
+
+
 					function updateCartTotal(){
 					var cartItemContainer = document.getElementsByClassName('cart')[0]
 					var cartRows = cartItemContainer.getElementsByClassName('product')
@@ -280,17 +280,17 @@
 						var price = parseFloat(priceElement.innerText.replace('€', ''))
 						var quantity = quantityElement.value
 						console.log(price * quantity)
-					
+
 						total = total + (price * quantity)
 					}
 					document.getElementsByClassName('totalprice')[0].innerText = '€' + total
 					document.getElementsByClassName('totalitems')[0].innerText = quantity = i
-					
+
 				}
-				
-				
-								
-				
+
+
+
+
 				function addTocartClicked(event) {
 				var button = event.target
 				var shopItem = button.parentElement.parentElement
@@ -298,14 +298,14 @@
 				var title = shopItem.getElementsByClassName('title')[0].innerText
 				var price = shopItem.getElementsByTagName('h3')[0].innerText
 				var category = shopItem.getElementsByClassName('category')[0].innerText
-				
+
 				console.log(title, price, category, ImgSrc)
 				addItemToCart(title, price, category, ImgSrc)
 				updateCartTotal()
-				
+
 				}
-				
-				
+
+
 				function addItemToCart(title, price, category, ImgSrc) {
 					var cartRow = document.createElement('div')
 					var cartItems = document.getElementsByClassName('products')[0]
@@ -335,10 +335,10 @@
 				</div>
 
 			</div>`
-			
+
 					cartRow.innerHTML = cartRowContents
 					cartItems.append(cartRow)
-							
+
 					var removeCartItems = document.getElementsByClassName('remove')
 					console.log(removeCartItems)
 					for (var i = 0; i < removeCartItems.length; i++) {
@@ -347,13 +347,13 @@
 					var buttonClicked = event.target
 					buttonClicked.parentElement.parentElement.parentElement.remove()
 					updateCartTotal()
-					
-					
+
+
 
 	})
 
 	}
-	
+
 					var quantityInputs = document.getElementsByClassName('productquantity')
 						for (var i = 0; i < removeCartItems.length; i++) {
 							var input = quantityInputs[i]
@@ -366,16 +366,16 @@
 							}
 							updateCartTotal()
 						}
-					
-					
-			
-					
+
+
+
+
 				}
-				
-				
-				
+
+
+
 				</script>
-			
+
 
 					</div>
 					</div>

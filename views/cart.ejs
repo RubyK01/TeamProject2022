@@ -49,6 +49,7 @@
                 Products
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <li><a class="dropdown-item" href="/generalProducts">General Products</a></li>
                 <li><a class="dropdown-item" href="/desktop">Desktop</a></li>
                 <li><a class="dropdown-item" href="/laptop">Laptop</a></li>
                 <li><a class="dropdown-item" href="/gpu">GPU</a></li>
@@ -163,7 +164,7 @@
 							}
 							updateCartTotal()
 						}
-						
+
 						function updateCartTotal(){
 					var cartItemContainer = document.getElementsByClassName('products')[0]
 					var cartRows = cartItemContainer.getElementsByClassName('product')
@@ -176,16 +177,16 @@
 						console.log(priceElement, quantityElement)
 						var price = parseFloat(priceElement.innerText.replace('€', ''))
 						var quantity = quantityElement.value
-					
+
 						total = total + (price * quantity)
 					}
 					document.getElementsByClassName('totalprice')[0].innerText = '€' + total
 				}
-						
-	
 
 
-	
+
+
+
 
 	</script>
 				</div>

@@ -48,11 +48,12 @@
                 Products
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <li><a class="dropdown-item" href="/generalProducts">General Products</a></li>
                 <li><a class="dropdown-item" href="/desktop">Desktop</a></li>
                 <li><a class="dropdown-item" href="/laptop">Laptop</a></li>
                 <li><a class="dropdown-item" href="/gpu">GPU</a></li>
                 <li><a class="dropdown-item" href="/cpu">CPU</a></li>
-                <li><a class="dropdown-item" href="/cooling">Cooling</a></li>
+                <li><a class="dropdown-item" href="/motherBoard">Mother boards</a></li>
                 <li><a class="dropdown-item" href="/ram">Ram</a></li>
                 <li><a class="dropdown-item" href="/storage">HardDisks/SSD</a></li>
               </ul>
@@ -64,7 +65,7 @@
     </div class="content">
       <div class="main">
 	   <h1 align="center"><b>Shopping Cart</b><h1>
-	  
+
 
 
 <div class="container">
@@ -72,17 +73,17 @@
 	<div class="cart">
 		<div class="products">
 
-			
 
-			
 
-			
+
+
+
 		</div>
-		
-					
 
-	
-		
+
+
+
+
 		<div class="cart-total">
 			<p>
 				<span>Total Price</span>
@@ -103,7 +104,7 @@
   		<h1 align="center"><b>motherboard Products</b></h1>
     <center>
 			<div class="container">
-		
+
 		<div class="productTabs">
 
             <a href="/accountInfo"><img src="images/motherboard7.png"></a>
@@ -221,7 +222,7 @@
 				for(var i = 0; i < addToCartButtons.length; i++) {
 					var button = addToCartButtons[i]
 					button.addEventListener('click', addTocartClicked)
-					
+
 				}
 					function updateCartTotal(){
 					var cartItemContainer = document.getElementsByClassName('cart')[0]
@@ -236,15 +237,15 @@
 						var price = parseFloat(priceElement.innerText.replace('€', ''))
 						var quantity = quantityElement.value
 						console.log(price * quantity)
-					
+
 						total = total + (price * quantity)
 					}
 					document.getElementsByClassName('totalprice')[0].innerText = '€' + total
 				}
-						
-				
-				
-				
+
+
+
+
 				function addTocartClicked(event) {
 				var button = event.target
 				var shopItem = button.parentElement.parentElement
@@ -252,12 +253,12 @@
 				var title = shopItem.getElementsByClassName('title')[0].innerText
 				var price = shopItem.getElementsByTagName('h3')[0].innerText
 				var category = shopItem.getElementsByClassName('category')[0].innerText
-				
+
 				console.log(title, price, category, ImgSrc)
 				addItemToCart(title, price, category, ImgSrc)
-				
+
 				}
-				
+
 				function addItemToCart(title, price, category, ImgSrc) {
 					var cartRow = document.createElement('div')
 					var cartItems = document.getElementsByClassName('products')[0]
@@ -287,10 +288,10 @@
 				</div>
 
 			</div>`
-			
+
 					cartRow.innerHTML = cartRowContents
 					cartItems.append(cartRow)
-					
+
 					var removeCartItems = document.getElementsByClassName('remove')
 					console.log(removeCartItems)
 					for (var i = 0; i < removeCartItems.length; i++) {
@@ -303,11 +304,11 @@
 	})
 
 	}
-					
+
 				}
-				
-				
-				
+
+
+
 				</script>
 
       </div>
