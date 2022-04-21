@@ -24,7 +24,7 @@ router.get('/', function(req, res, next) {
 
 //for creating an account
 // The Signup function is async as we expect more than one user would be using it.
-router.post('/create', async function (req, res, next){
+router.post('/create', async function create(req, res, next){
   var error = req.query.error;
   var fName = req.body.fName;
   var lName = req.body.lName;
@@ -39,7 +39,7 @@ router.post('/create', async function (req, res, next){
   });
   //sql query to get details from database so I can check later if the username or email already exists in the database.
   var getEmailUsername = "SELECT * FROM customer;";
-  connection.query(getEmailUsername, async function create(err, results){
+  connection.query(getEmailUsername, async function(err, results){
     if(results.length){
       var checkEmail = results[0].email;
       var checkUsername = results[0].userName;

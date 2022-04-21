@@ -1,3 +1,4 @@
+/* Tomas */
 html,body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   min-height: 400px;
@@ -87,12 +88,13 @@ footer{
   background-color: #e8c900;
 }
 
-.googleButton{
-  width: 70px;
-  left: 200px;
-  border-radius: 25px;
-  border: 2px solid;
-  display: inline-block;
+.linkButton{
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
 }
 
 .d-grid{
@@ -154,6 +156,8 @@ div.productTabs img{
   width: 50%;
   height:50%;
 }
+
+/* Glen */
 
 .cart{
 
@@ -342,6 +346,7 @@ div.productTabs img{
 
 }
 
+/* Tomas */
 /* Tablet screen */
 @media only screen and (max-width: 800px) {
   html,body {
@@ -433,6 +438,7 @@ div.productTabs img{
 
 }
 
+/* Tomas */
 /* Phone screen */
 @media only screen and (max-width: 580px) {
   html,body {
