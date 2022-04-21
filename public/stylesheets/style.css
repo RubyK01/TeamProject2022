@@ -105,7 +105,7 @@ footer{
   display: inline-block;
 }
 
-.form-group{
+.form-group,.text{
   max-width: 320px;
 }
 
