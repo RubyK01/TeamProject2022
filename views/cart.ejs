@@ -84,7 +84,7 @@
 
 					<h4 class="producttype">CPU</h4>
 
-					<p class="productquantity">Qnt: <input value="1" name="">
+					<p>Qnt:<input class="productquantity" <input value="1" name=""> </p>
 
 					<p class="productremove">
 
@@ -110,7 +110,7 @@
 
 					<h4 class="producttype">Storage</h4>
 
-					<input class="productquantity"Qnt: <input value="1" name="">
+					<p>Qnt:<input class="productquantity" <input value="1" name=""> </p>
 
 					<p class="productremove">
 
@@ -132,7 +132,7 @@
 					<h3 class="productname">16GB Corsair Vengeance LPX DDR4 3200MHz PC4-25600 CL16 Dual Channel Kit (2x 8GB) Black</h3>
 					<h4 class="productprice">€75</h4>
 					<h4 class="producttype">RAM</h4>
-					<input class="productquantity"Qnt: <input value="1" name="">
+					<p>Qnt:<input class="productquantity" <input value="1" name=""> </p>
 					<p class="productremove">
 						<i class="fa fa-trash" aria-hidden="true"></i>
 						<span class="remove">Remove</span>
@@ -151,6 +151,18 @@
 	})
 
 	}
+						var quantityInputs = document.getElementsByClassName('productquantity')
+						for (var i = 0; i < removeCartItems.length; i++) {
+							var input = quantityInputs[i]
+							input.addEventListener('change', quantitychanged)
+						}
+						function quantitychanged(event) {
+						var input = event.target
+						if(isNaN(input.value) || input.value <= 0) {
+								input.value = 1
+							}
+							updateCartTotal()
+						}
 						
 						function updateCartTotal(){
 					var cartItemContainer = document.getElementsByClassName('products')[0]
