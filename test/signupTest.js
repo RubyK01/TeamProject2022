@@ -116,3 +116,37 @@ describe('signup', function(){
     assert.equal(testResult,false);
   })
 });
+
+describe('signup', function(){
+  it("Username not in use.", function create (){
+    var userName = "Jcena"
+    var checkUsername = "Jcena"
+    var testResult = false;
+
+    if(userName != checkUsername){
+      testResult = true;
+    }
+    else{
+      testResult = false;
+    }
+
+    assert.equal(testResult,true);
+  })
+});
+
+describe('signup', function(){
+  it("Email not in use.", function create (){
+    var email = "jcena@email.com"
+    var checkEmail = "jcena@email.com"
+    var testResult = false;
+
+    if(email != checkEmai){
+      testResult = true;
+    }
+    else{
+      testResult = false;
+    }
+
+    assert.equal(testResult,true);
+  })
+});

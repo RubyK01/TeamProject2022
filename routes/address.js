@@ -62,7 +62,7 @@ router.post('/create', async function (req, res, next){
       if(countys.includes(county.ignoreCase) && towncheck === true){
         //If the county is valid and the town/city does not have a number the address is valid.
         connection.query("INSERT INTO address(addressline1, addressline2, townOrCity, county, zipCode, customerID) VALUES (?, ?, ?, ?, ?, ?);", [addressline1, addressline2, townOrCity, county, zipCode, customerID]);
-        res.redirect("/address"+"?&message=Address added!");
+        res.redirect("/address");
       }
       else{
         res.redirect("/address"+"?&error=Invalid address.");

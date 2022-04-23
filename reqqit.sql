@@ -67,7 +67,46 @@ productType varchar(255) not null,
 productUse varchar(255) not null
 );
 
+-- customer table insert
 -- Jcena password is password1 
 insert into customer(fName, Lname, userName, email, pass_word) values ("John","Cena","Jcena","johnc@email.com","$2a$05$yvHo6wr5kC4FqQKvGEXqF.RUIw0sO3NtuZHNzNDz1TSAjypDhvzuS");
 
-insert into
+-- recProducts insert
+insert into recProducts(productID, productName, price, productType, productUse) values ('12345', "Lenovo 250GB SSD 8GB Memory", '200', "Laptop", "casual");
+insert into recProducts(productID, productName, price, productType, productUse) values ('12346', "Dell 500GB SSD 16GB Memory", '400', "Laptop", "work");
+insert into recProducts(productID, productName, price, productType, productUse) values ('12347', "Alienware 500GB SSD 32GB Memory 250GB HDD", '800', "Laptop", "games");
+insert into recProducts(productID, productName, price, productType, productUse) values ('12348', "Dell 250GB HDD 4GB Memory", '200', "Laptop", "casual");
+insert into recProducts(productID, productName, price, productType, productUse) values ('12349', "Asus 500GB SSD 8GB Memory", '200', "Laptop", "work");
+insert into recProducts(productID, productName, price, productType, productUse) values ('12350', "HP 250GB SSD 16GB Memory", '200', "Laptop", "games");
+insert into recProducts(productID, productName, price, productType, productUse) values ('12351', "Lenovo 250GB SSD 8GB Memory", '400', "Laptop", "casual");
+insert into recProducts(productID, productName, price, productType, productUse) values ('12352', "Dell 500GB SSD 16GB Memory", '800', "Laptop", "work");
+insert into recProducts(productID, productName, price, productType, productUse) values ('12353', "Alienware 500GB SSD 32GB Memory 250GB HDD", '800', "Laptop", "games");
+insert into recProducts(productID, productName, price, productType, productUse) values ('12354', "Dell 250GB HDD 4GB Memory", '400', "Laptop", "casual");
+insert into recProducts(productID, productName, price, productType, productUse) values ('12355', "Asus 500GB SSD 8GB Memory", '400', "Laptop", "work");
+insert into recProducts(productID, productName, price, productType, productUse) values ('12356', "HP 250GB SSD 16GB Memory", '400', "Laptop", "games");
+insert into recProducts(productID, productName, price, productType, productUse) values ('12357', "Lenovo 250GB SSD 8GB Memory", '800', "Laptop", "casual");
+insert into recProducts(productID, productName, price, productType, productUse) values ('12358', "Dell 500GB SSD 16GB Memory", '800', "Laptop", "work");
+insert into recProducts(productID, productName, price, productType, productUse) values ('12359', "Alienware 500GB SSD 32GB Memory 250GB HDD", '800', "Laptop", "games");
+insert into recProducts(productID, productName, price, productType, productUse) values ('12360', "Dell 250GB HDD 64GB Memory", '800', "Laptop", "casual");
+insert into recProducts(productID, productName, price, productType, productUse) values ('12361', "Asus 500GB SSD 8GB Memory 500GB HDD", '800', "Laptop", "work");
+insert into recProducts(productID, productName, price, productType, productUse) values ('12362', "HP 1TB SSD 64GB Memory", '800', "Laptop", "games");
+
+
+insert into recProducts(productID, productName, price, productType, productUse) values ('12363', "Lenovo 250GB SSD 8GB Memory", '200', "Desktop", "casual");
+insert into recProducts(productID, productName, price, productType, productUse) values ('12364', "Dell 500GB SSD 16GB Memory", '400', "Desktop", "work");
+insert into recProducts(productID, productName, price, productType, productUse) values ('12365', "Alienware 500GB SSD 32GB Memory 250GB HDD", '800', "Desktop", "games");
+insert into recProducts(productID, productName, price, productType, productUse) values ('12366', "Dell 250GB HDD 4GB Memory", '200', "Desktop", "casual");
+insert into recProducts(productID, productName, price, productType, productUse) values ('12367', "Asus 500GB SSD 8GB Memory", '200', "Desktop", "work");
+insert into recProducts(productID, productName, price, productType, productUse) values ('12368', "HP 250GB SSD 16GB Memory", '200', "Desktop", "games");
+insert into recProducts(productID, productName, price, productType, productUse) values ('12369', "Lenovo 250GB SSD 8GB Memory", '400', "Desktop", "casual");
+insert into recProducts(productID, productName, price, productType, productUse) values ('12370', "Dell 500GB SSD 16GB Memory", '800', "Desktop", "work");
+insert into recProducts(productID, productName, price, productType, productUse) values ('12371', "Alienware 500GB SSD 32GB Memory 250GB HDD", '800', "Desktop", "games");
+insert into recProducts(productID, productName, price, productType, productUse) values ('12372', "Dell 250GB HDD 4GB Memory", '400', "Desktop", "casual");
+insert into recProducts(productID, productName, price, productType, productUse) values ('12373', "Asus 500GB SSD 8GB Memory", '400', "Desktop", "work");
+insert into recProducts(productID, productName, price, productType, productUse) values ('12374', "HP 250GB SSD 16GB Memory", '400', "Desktop", "games");
+insert into recProducts(productID, productName, price, productType, productUse) values ('12375', "Lenovo 250GB SSD 8GB Memory", '800', "Desktop", "casual");
+insert into recProducts(productID, productName, price, productType, productUse) values ('12376', "Dell 500GB SSD 16GB Memory", '800', "Desktop", "work");
+insert into recProducts(productID, productName, price, productType, productUse) values ('12377', "Alienware 500GB SSD 32GB Memory 250GB HDD", '800', "Desktop", "games");
+insert into recProducts(productID, productName, price, productType, productUse) values ('12378', "Dell 250GB HDD 64GB Memory", '800', "Desktop", "casual");
+insert into recProducts(productID, productName, price, productType, productUse) values ('12379', "Asus 500GB SSD 8GB Memory 500GB HDD", '800', "Laptop", "work");
+insert into recProducts(productID, productName, price, productType, productUse) values ('12380', "MINECRAFT ELITE DESKTOP PC AMD Ryzen 5 3600 8GB DDR4 2666MHz 4GB GTX 1650 256GB SSD", '800', "Desktop", "games");
