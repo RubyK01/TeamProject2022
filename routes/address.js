@@ -49,14 +49,25 @@ router.post('/create', async function (req, res, next){
   "Donegal","Down","Dublin","Fermanagh","Galway","Kerry","Kildare","Kilkenny",
   "Laois","Leitrim","Limerick","Longford","Louth","Mayo","Meath", "Monaghan",
   "Offaly","Roscommon","Sligo","Tipperary","Tyrone","Waterford", "Westmeath",
-  "Wexford","Wicklow"]
+  "Wexford","Wicklow"];
 
-  if(countys.includes(county.ignoreCase)){
-    connection.query("INSERT INTO address(addressline1, addressline2, townOrCity, county, zipCode, customerID) VALUES (?, ?, ?, ?, ?, ?);", [addressline1, addressline2, townOrCity, county, zipCode, customerID]);
-    res.redirect("/address"+"?&message=Address added!");
-  }
-  else{
-    res.redirect("/address"+"?&error=Invalid address.");
+  //To validate the address.
+  for(var i = 0; i < townOrCity.length; i++){
+    //Checking to see if the town/city input contains a number of.
+    //https://thispointer.com/javascript-check-if-a-string-contains-numbers/
+    if(!isNaN(townOrCity.charAt(i)) && !(townOrCity.charAt(i) === " ") ){
+      //variable to hold result of the check.
+      var towncheck = true;
+      //check if county is valid.
+      if(countys.includes(county.ignoreCase) && towncheck === true){
+        //If the county is valid and the town/city does not have a number the address is valid.
+        connection.query("INSERT INTO address(addressline1, addressline2, townOrCity, county, zipCode, customerID) VALUES (?, ?, ?, ?, ?, ?);", [addressline1, addressline2, townOrCity, county, zipCode, customerID]);
+        res.redirect("/address"+"?&message=Address added!");
+      }
+      else{
+        res.redirect("/address"+"?&error=Invalid address.");
+      }
+    }
   }
 });
 

@@ -51,7 +51,8 @@ foreign key (customerID) references customer(customerID) on delete cascade
 
 create table payment(
 cardNum int,
-holderName varchar(255),
+fName varchar(255) not null,
+lName varchar(255) not null,
 secruityNum int,
 expiray date,
 customerID int not null,

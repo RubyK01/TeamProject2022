@@ -53,23 +53,18 @@ router.post('/create', async function create(req, res, next){
           connection.query("INSERT INTO customer(fName, lName, userName, email, pass_word) VALUES ((?), (?), (?), (?), (?));", [fName, lName, userName, email, pass_word]);
           console.log(req.body.fName , req.body.lName, req.body.userName, req.body.email, req.body.pass_word);
           console.log("hashed password: "+pass_word);
-          testResult = true;
           res.redirect("/login"+"?message=Account created successfully!");
         }
         else if(!email.includes("@") || !email.includes(".")){
-          testResult = false;
           res.redirect("/signup"+"?&error=Invalid email!");
         }
         else if(fName.includes("0") || fName.includes("1") || fName.includes("2") || fName.includes("3") || fName.includes("4") || fName.includes("5") || fName.includes("6") || fName.includes("7") || fName.includes("8") || fName.includes("9")){
-          testResult = false;
           res.redirect("/signup"+"?&error=Invalid first name!");
         }
         else if(lName.includes("0") || lName.includes("1") || lName.includes("2") || lName.includes("3") || lName.includes("4") || lName.includes("5") || lName.includes("6") || lName.includes("7") || lName.includes("8") || lName.includes("9")){
-          testResult = false;
           res.redirect("/signup"+"?&error=Invalid last name!");
         }
         else{
-          testResult = false;
           res.redirect("/signup"+"?&error=Invalid password!");
         }
       }
