@@ -64,31 +64,33 @@
     <div class="content">
       <div class="main">
         <center>
-	       <h2><b>Reccomendations</b></h2>
-         <p>Unsure of what your looking for? Use our tool below to add and specify exactly what you are looking for in following drop down menus and we will do the rest.:</p>
+	       <h2><b>Recommendations</b></h2>
+         <p>Need help with a product? Take a look at what we recommend!</p>
         <form action="/action_page.php">
-          <label for="Recommendation">Do you want a desktop or laptop?:</label>
-          <select id="Recommendation" name="products">
-            <option value="volvo">desktop</option>
-            <option value="saab">laptop</option>
+          <label for="rec1">Do you want a desktop or laptop?:</label>
+          <select id="rec1" name="deviceType">
+            <option value="Desktop" selected>Desktop</option>
+            <option value="Laptop">Laptop</option>
           </select>
         </form>
         <form action="/action_page.php">
-          <label for="Recommendation">What is your price range?:</label>
-          <select id="Recommendation" name="products">
-            <option value="volvo">€200/400</option>
-            <option value="saab">€400/800</option>
-            <option value="fiat" selected>€800+</option>
+          <label for="rec2">What is your price range?:</label>
+          <select id="rec2" name="price">
+            <option value="200" selected>€200</option>
+            <option value="400">€400/800</option>
+            <option value="800">€800</option>
           </select>
         </form>
         <form action="/action_page.php">
-          <label for="Recommendation">What will you use your PC for?:</label>
-          <select id="Recommendation" name="products">
-            <option value="volvo">Gaming/Streaming</option>
-            <option value="saab">General office work</option>
-            <option value="fiat" selected>Web browsing</option>
+          <label for="rec3">What will you use your PC for?:</label>
+          <select id="rec3" name="products">
+            <option value="games">Gaming/Streaming</option>
+            <option value="work">General office work</option>
+            <option value="casual" selected>Web browsing</option>
           </select>
-          <input type="submit">
+          <div class="space">
+            <button class="reuseabale" type="submit" value = "submit">Submit</button>
+          </div>
         </form>
       </center>
       </div>

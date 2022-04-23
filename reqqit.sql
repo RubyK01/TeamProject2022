@@ -1,10 +1,10 @@
+-- Made by Tomas
 DROP DATABASE IF EXISTS `reqqit`;
 
 create database if not exists`reqqit` default character set utf8 collate utf8_general_ci;
 
 use reqqit;
 
--- Made by Tomas
 create table customer(
 customerID int not null primary key auto_increment,
 fName varchar(255) not null,
@@ -59,5 +59,15 @@ customerID int not null,
 foreign key (customerID) references customer(customerID) on delete cascade
 );
 
+create table recProducts(
+productID int not null primary key auto_increment,
+productName varchar(255) not null,
+price double not null,
+productType varchar(255) not null,
+productUse varchar(255) not null
+);
+
 -- Jcena password is password1 
 insert into customer(fName, Lname, userName, email, pass_word) values ("John","Cena","Jcena","johnc@email.com","$2a$05$yvHo6wr5kC4FqQKvGEXqF.RUIw0sO3NtuZHNzNDz1TSAjypDhvzuS");
+
+insert into
