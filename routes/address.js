@@ -45,8 +45,19 @@ router.post('/create', async function (req, res, next){
     password: connection_details.password,
     database: connection_details.database
   });
-  connection.query("INSERT INTO address(addressline1, addressline2, townOrCity, county, zipCode, customerID) VALUES (?, ?, ?, ?, ?, ?);", [addressline1, addressline2, townOrCity, county, zipCode, customerID]);
-  res.redirect("/address"+"?&message=Address added!");
+  var countys = ["Antrim","Armagh","Carlow","Cavan","Clare","Cork","Derry",
+  "Donegal","Down","Dublin","Fermanagh","Galway","Kerry","Kildare","Kilkenny",
+  "Laois","Leitrim","Limerick","Longford","Louth","Mayo","Meath", "Monaghan",
+  "Offaly","Roscommon","Sligo","Tipperary","Tyrone","Waterford", "Westmeath",
+  "Wexford","Wicklow"]
+
+  if(countys.includes(county.ignoreCase)){
+    connection.query("INSERT INTO address(addressline1, addressline2, townOrCity, county, zipCode, customerID) VALUES (?, ?, ?, ?, ?, ?);", [addressline1, addressline2, townOrCity, county, zipCode, customerID]);
+    res.redirect("/address"+"?&message=Address added!");
+  }
+  else{
+    res.redirect("/address"+"?&error=Invalid address.");
+  }
 });
 
 module.exports = router;

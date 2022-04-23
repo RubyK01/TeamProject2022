@@ -25,7 +25,7 @@ router.post('/auth', async function(req, res) { //https://codeshack.io/basic-log
     database: connection_details.database
   });
   // To take the users inputs from the text fields.
-	var userName = req.body.userName
+	var userName = req.body.userName;
 	var pass_word = req.body.pass_word;
   var error = req.query.error; // Didnt want to use express flash so I made a variable to pass an error message out if needed.
   //https://coderszine.com/user-login-and-registration-with-node-js-express-mysql/
