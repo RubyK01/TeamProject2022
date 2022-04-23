@@ -1,13 +1,14 @@
 var express = require('express');
 var router = express.Router();
-var MySql = require('sync-mysql');
+var mysql = require('mysql');
 var connection_details = require("../modules/connection_details");
 var session = require('express-session');
 
 //Made by Tomas.
 //to get accountInfo page.
 router.get('/', function(req, res, next) {
-  var connection = new MySql({
+  var message = req.query.message;
+  var connection = mysql.createConnection({
     host: connection_details.host,
     user: connection_details.user,
     password: connection_details.password,
@@ -32,8 +33,23 @@ router.get('/', function(req, res, next) {
     email: email,
     fName: fName,
     lName: lName,
-    userName: userName
+    userName: userName,
+    message: message
    });
+});
+
+//method to delete the users account.
+router.post('/delete', async function deleteAccount(req, res, next){
+  var connection = mysql.createConnection({
+    host: connection_details.host,
+    user: connection_details.user,
+    password: connection_details.password,
+    database: connection_details.database
+  });
+  var customerID = req.session.userID
+  connection.query("DELETE FROM customer WHERE customerID = '"+customerID+"';");
+  req.session.destroy();
+  res.redirect("/login"+"?message=Account deleted successfully!");
 });
 
 module.exports = router;

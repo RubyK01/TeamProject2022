@@ -77,6 +77,11 @@
             <p class="user"><%= userName %></p>
             <p class="card-text-user">Name: <%=fName %> <%=lName %></p>
             <p class="card-text-user">Contact: <%=email %></p>
+            <form action="accountInfo/delete" method="post">
+              <div class="space">
+                <button class="delete" type="submit" value = "submit">Delete</button>
+              </div>
+            </form>
           </div>
         </div>
         </center>

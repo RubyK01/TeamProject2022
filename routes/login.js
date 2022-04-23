@@ -33,7 +33,7 @@ router.post('/auth', async function(req, res) { //https://codeshack.io/basic-log
   //https://www.npmjs.com/package/express-session
   //Above is the source where I learned where to use sessions.
   var getHashPass = "SELECT * FROM customer WHERE userName = '"+userName+"';";
-  connection.query(getHashPass, async function(err, results){
+  connection.query(getHashPass, async function login(err, results){
     if(results.length){
       // Where I learned how to use bcrypt https://www.npmjs.com/package/bcrypt
       var pass = results[0].pass_word // takes the encrypted password from mysql

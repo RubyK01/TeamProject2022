@@ -88,6 +88,20 @@ footer{
   background-color: #e8c900;
 }
 
+.delete{
+  background-color: #800000;
+  width: 70px;
+  left: 200px;
+  border: 2px solid;
+  border-radius: 25px;
+  display: inline-block;
+  color: black;
+}
+
+.delete:hover{
+  background-color: #cc0000;
+}
+
 .linkButton{
   background-color: transparent;
   background-repeat: no-repeat;
