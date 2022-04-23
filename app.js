@@ -67,7 +67,7 @@ app.use('/accountInfo', accounInfoRouter);
 app.use('/checkOut', checkRouter);
 app.use('/uploadProduct', uploadProductRouter);
 app.use('/address',addressRouter);
-app.use('/generalProduct', genProductsRouter);
+app.use('/generalProducts', genProductsRouter);
 
 app.use(function(req, res, next){ // https://stackoverflow.com/questions/12457615/expressjs-how-to-show-hide-a-div-in-case-user-its-logged
   if (req.session.user) {
