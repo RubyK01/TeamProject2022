@@ -119,7 +119,7 @@ describe('signup', function(){
 
 describe('signup', function(){
   it("Username not in use.", function create (){
-    var userName = "Jcena"
+    var userName = "Jcena1"
     var checkUsername = "Jcena"
     var testResult = false;
 
@@ -130,23 +130,23 @@ describe('signup', function(){
       testResult = false;
     }
 
-    assert.equal(testResult,false);
+    assert.equal(testResult,true);
   })
 });
 
 describe('signup', function(){
   it("Email not in use.", function create (){
-    var email = "jcena@email.com"
+    var email = "jcena1@email.com"
     var checkEmail = "jcena@email.com"
     var testResult = false;
 
-    if(email != checkEmai){
+    if(email != checkEmail){
       testResult = true;
     }
     else{
       testResult = false;
     }
 
-    assert.equal(testResult,false);
+    assert.equal(testResult,true);
   })
 });

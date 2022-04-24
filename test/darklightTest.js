@@ -1,32 +1,32 @@
-var index = require("../views/index");
 var assert = require("chai").assert;
 
-
-describe('darklightTheme', function(){
-  it("validTheme.", async function create(){
-    var button = togglebutton{i};
-	var toggleButton = true;
+describe('theme', function(){
+  it("Light theme to dark theme.", async function create(){
+	  var toggleButton = true;
     var testResult = false;
 
-    if(togglebutton){
+    if(toggleButton){
+      var light = false;
       testResult = true;
     }
     else{
+      var dark = true;
       testResult = false;
     }
 
     assert.equal(testResult,true)
   });
 
-  it("Invalid theme.", async function create(){
-    var togglebutton= "toggletheme";
-    
+  it("Dark theme to light theme.", async function create(){
+    var toggleButton = false;
     var testResult = false;
 
-    if(togglebutton){
-      assert.equal(testResult,true)
+    if(toggleButton){
+      var light = false;
+      testResult = true;
     }
     else{
+      var dark = true;
       testResult = false;
     }
 

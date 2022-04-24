@@ -26,7 +26,7 @@ router.get('/', function(req, res, next) {
     password: connection_details.password,
     database: connection_details.database
   });
-  // var address = connection.query("SELECT * FROM address WHERE customerID ='"+customerID+"';");
+  var address = connection.query("SELECT * FROM address WHERE customerID ='"+customerID+"';");
   res.render('address', { title: 'address' , error: error, message: message, address: address});
 });
 
