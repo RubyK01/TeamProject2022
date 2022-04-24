@@ -61,80 +61,80 @@
         </div>
       </div>
     </nav>
+	<!-- Recommendations page done by Glen-->
     <div class="content">
       <div class="main">
-        <center>
-	       <h2><b>Recommendations</b></h2>
-         <p>Need help with a product? Take a look at what we recommend!</p>
-        <form action="recommendation/rec" method="post">
-          <div class="form-group mb-2">
-            <!-- https://getbootstrap.com/docs/5.1/components/alerts/ -->
-            <!-- error icon -->
-            <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-              <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
-                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-              </symbol>
-              <symbol id="info-fill" fill="currentColor" viewBox="0 0 16 16">
-                <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
-              </symbol>
-              <symbol id="exclamation-triangle-fill" fill="currentColor" viewBox="0 0 16 16">
-                <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-              </symbol>
-            </svg>
-            <!-- If an error occurs the error message will be displayed to the user. -->
-          <% if(error) { %>
-            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-              <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
-              Error: <%= error %> <!--Error message -->
-              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-          <% } %>
-          <div class="form-group mb-2">
-            <input type="text" class="form-control" id="deviceType" name = "deviceType" placeholder="Laptop or Desktop">
-          </div>
-          <div class="form-group mb-2">
-            <input type="number" class="form-control" id="price1" name = "price1" placeholder="Price 1: €200" required>
-          </div>
-          <div class="form-group mb-2">
-            <input type="number" class="form-control" id="price2" name = "price2" placeholder="Price 2: €800" required>
-          </div>
-          <div class="form-group mb-2">
-            <input type="text" class="form-control" id="use" name = "use" placeholder="Games/Work/Caual" required>
-          </div>
-          <br>
-          <div class="space">
-            <button class="reuseabale" type="submit" value = "submit">Submit</button>
-          </div>
-        </form>
-          <% for(var i = 0; i < recProducts.length; i++){ %>
-          <div class="card" style="width: 18rem;">
-            <div class="card-body">
-              <!-- Render results details -->
-              <td class="card-text-user">Result: <%= i %></td>
-              <td class="card-text-user"><%= recProducts[i].productName %></td>
-              <td class="card-text-user"><%= recProducts[i].price %></td>
-            </div>
-         </div>
-         <% } %>
-         <% for(var i = 0; i < recProducts.length; i++){ %>
-             <table class="table table-hover">
-              <thead>
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">Product</th>
-                  <th scope="col">€</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row"><%= i %></th>
-                  <td><%= recProducts[i].productName %></td>
-                  <td><%= recProducts[i].price %></td>
-                </tr>
-              </tbody>
-            </table>
-        <% } %>
-      </center>
+	  
+	  <center><b><h1>Recommendations Page</h1><b><center>
+	  <br>
+	  			<table align="center" width="50%" cellpadding="8" cellspacing="8">
+			
+			<tr>
+			<td>
+			<select id = "Recommendations" onchange = "showMap()" style=" width: 90%">
+			<option value="select">Select</option>
+			<option value="lowend1">Desktop/€400,500/Web browsing</option>
+			<option value="lowend">Test2</option>
+			<option value="midrange">Test3</option>
+			<option value="higherrange">Test4</option>
+			<option value="higherrange1">Test5</option>
+			<option value="higherrange2">Test6</option>
+			<tr>
+			<td>
+			<center><img src = "images/recommended1.png" style ="visibility: hidden;" id ="map" width="300" height="400">
+			<img src = "images/recommended2.png" style ="visibility: hidden;" id ="map2" width="300" height="400">
+			<img src = "images/recommended2.png" style ="visibility: hidden;" id ="map3" width="300" height="400">
+			<img src = "images/recommended2.png" style ="visibility: hidden;" id ="map4" width="300" height="400">
+			<img src = "images/recommended2.png" style ="visibility: hidden;" id ="map5" width="300" height="400">
+			<img src = "images/recommended2.png" style ="visibility: hidden;" id ="map6" width="300" height="400">
+			</td>
+			</tr>
+			</select>
+			</td>
+			</tr>
+			</table>
+			<script type="text/javascript">
+			function showMap()
+			{
+				Recommendations = document.getElementById("Recommendations").value;
+				if(Recommendations == "lowend1")
+				{
+					document.getElementById("map").style.visibility='visible'
+				}
+				else if(Recommendations == "lowend")
+				{
+					document.getElementById("map2").style.visibility='visible'
+				}
+				else if(Recommendations =="midrange")
+				{
+					document.getElementById("map3").style.visibility='visible'
+				}
+				else if(Recommendations == "higherrange")
+				{
+					document.getElementById("map4").style.visibility='visible'
+				}
+				else if(Recommendations =="higherrange1")
+				{
+					document.getElementById("map5").style.visibility='visible'
+				}
+				else if(Recommendations =="higherrange2")
+				{
+					document.getElementById("map6").style.visibility='visible'
+				}
+					else
+				{
+					document.getElementById("map").style.display='none'
+					document.getElementById("map2").style.display='none'
+					document.getElementById("map3").style.display='none'
+					document.getElementById("map4").style.display='none'
+					document.getElementById("map5").style.display='none'
+					document.getElementById("map6").style.display='none'
+				}
+				}
+			</script>
+
+			
+			
       </div>
     </div>
     <div class="footer">
