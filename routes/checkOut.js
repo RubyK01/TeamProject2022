@@ -3,7 +3,7 @@ var router = express.Router();
 var session = require('express-session');
 var mysql = require('mysql');
 
-/* GET home page. */
+// GET checkout page.
 router.get('/', function(req, res, next) {
   //login checker by Tomas.
   //If the user is not logged into an account while trying to go to this page,
@@ -13,7 +13,7 @@ router.get('/', function(req, res, next) {
   }
   res.render('checkOut', { title: 'cart' });
 });
-// the routes were done by Tomas
+
 //Made by Jamie.
 router.post('/auth',async function(req, res, next) {
 	var fName = req.body.fName;
@@ -31,10 +31,7 @@ router.post('/auth',async function(req, res, next) {
   });
   connection.query(getEmailUsername, async function(err, results){
 	connection.query("INSERT INTO payment(cardNum, fName, lName, secruityNum, expirayDate, customerID) VALUES (?,?,?,?,?,?)",[cardNumber,fName,lName,cvv,expiration,customerID]);
-  	if(results.length){
-  		var checkEmail = results[0].email;
-      var checkUsername = results[0].userName;
-  	}
+  res.redirect("/account"+"?message=Order confirmed!");
   });
 });
 
