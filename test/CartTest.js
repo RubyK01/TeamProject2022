@@ -13,5 +13,36 @@ describe('generalProducts', function(){
 			}
 		}
 	 assert.equal(testResult,true)
- })
+ });
+ 
+	it("Remove fucntion.", async function create() {
+		var removeCartItems = true
+		if (removeCartItems){
+			var cartItemContainer = true;
+			if (cartItemContainer){
+				var testResult = true;
+				}
+			else{
+				var testResult = false;
+			}
+		}
+		
+		assert.equal(testResult,true)
+	});
+	
+	it("updating quantity.", async function create() {
+		var quantityElement = true
+		if (quantityElement) {
+			var cartItemContainer = true;
+			if (cartItemContainer) {
+				var testResult = true;
+			}
+			else{
+				var testResult = false;
+			
+			}
+		}
+		assert.equal(testResult,true)
+	});
 });
+

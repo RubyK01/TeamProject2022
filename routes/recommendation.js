@@ -13,8 +13,8 @@ router.get('/', function(req, res, next) {
     database: connection_details.database
   });
   var error = req.query.error;
-  var recProducts = connection.query("SELECT * FROM recProducts");
-  res.render('recommendation', { title: 'Recommendation', recProducts: recProducts,  error: error});
+ // var recProducts = connection.query("SELECT * FROM recProducts");
+  res.render('recommendation', { title: 'Recommendation', error: error});
 });
 
 router.post('/rec', async function(req,res,next){

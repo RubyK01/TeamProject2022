@@ -71,7 +71,7 @@
 			
 			<tr>
 			<td>
-			<select id = "Recommendations" onchange = "showMap()" style=" width: 90%">
+			<select id = "Recommendations" onchange = "showImages()" style=" width: 90%">
 			<option value="select">Select</option>
 			<option value="lowend1">Desktop/€400,500/Web browsing</option>
 			<option value="lowend">Test2</option>
@@ -81,12 +81,12 @@
 			<option value="higherrange2">Test6</option>
 			<tr>
 			<td>
-			<center><img src = "images/recommended1.png" style ="visibility: hidden;" id ="map" width="300" height="400">
-			<img src = "images/recommended2.png" style ="visibility: hidden;" id ="map2" width="300" height="400">
-			<img src = "images/recommended2.png" style ="visibility: hidden;" id ="map3" width="300" height="400">
-			<img src = "images/recommended2.png" style ="visibility: hidden;" id ="map4" width="300" height="400">
-			<img src = "images/recommended2.png" style ="visibility: hidden;" id ="map5" width="300" height="400">
-			<img src = "images/recommended2.png" style ="visibility: hidden;" id ="map6" width="300" height="400">
+			<center><img src = "images/recommended1.png" style ="visibility: hidden;" id ="pic" width="300" height="400">
+			<img src = "images/recommended2.png" style ="visibility: hidden;" id ="pic2" width="300" height="400">
+			<img src = "images/recommended2.png" style ="visibility: hidden;" id ="pic3" width="300" height="400">
+			<img src = "images/recommended2.png" style ="visibility: hidden;" id ="pic4" width="300" height="400">
+			<img src = "images/recommended2.png" style ="visibility: hidden;" id ="pic5" width="300" height="400">
+			<img src = "images/recommended2.png" style ="visibility: hidden;" id ="pic6" width="300" height="400">
 			</td>
 			</tr>
 			</select>
@@ -94,41 +94,41 @@
 			</tr>
 			</table>
 			<script type="text/javascript">
-			function showMap()
+			function showImages()
 			{
 				Recommendations = document.getElementById("Recommendations").value;
 				if(Recommendations == "lowend1")
 				{
-					document.getElementById("map").style.visibility='visible'
+					document.getElementById("pic").style.visibility='visible'
 				}
 				else if(Recommendations == "lowend")
 				{
-					document.getElementById("map2").style.visibility='visible'
+					document.getElementById("pic2").style.visibility='visible'
 				}
 				else if(Recommendations =="midrange")
 				{
-					document.getElementById("map3").style.visibility='visible'
+					document.getElementById("pic3").style.visibility='visible'
 				}
 				else if(Recommendations == "higherrange")
 				{
-					document.getElementById("map4").style.visibility='visible'
+					document.getElementById("pic4").style.visibility='visible'
 				}
 				else if(Recommendations =="higherrange1")
 				{
-					document.getElementById("map5").style.visibility='visible'
+					document.getElementById("pic5").style.visibility='visible'
 				}
 				else if(Recommendations =="higherrange2")
 				{
-					document.getElementById("map6").style.visibility='visible'
+					document.getElementById("pic6").style.visibility='visible'
 				}
 					else
 				{
-					document.getElementById("map").style.display='none'
-					document.getElementById("map2").style.display='none'
-					document.getElementById("map3").style.display='none'
-					document.getElementById("map4").style.display='none'
-					document.getElementById("map5").style.display='none'
-					document.getElementById("map6").style.display='none'
+					document.getElementById("pic").style.display='none'
+					document.getElementById("pic2").style.display='none'
+					document.getElementById("pic3").style.display='none'
+					document.getElementById("pic4").style.display='none'
+					document.getElementById("pic5").style.display='none'
+					document.getElementById("pic6").style.display='none'
 				}
 				}
 			</script>
