@@ -7,10 +7,12 @@ describe('theme', function(){
 
     if(toggleButton){
       var light = false;
+      var dark = true;
       testResult = true;
     }
     else{
-      var dark = true;
+      var dark = false;
+      var light = true;
       testResult = false;
     }
 
@@ -22,10 +24,12 @@ describe('theme', function(){
     var testResult = false;
 
     if(toggleButton){
-      var light = false;
+      var light = true;
+      var dark = false;
       testResult = true;
     }
     else{
+      var light = false;
       var dark = true;
       testResult = false;
     }
