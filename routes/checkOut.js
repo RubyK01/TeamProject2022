@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var session = require('express-session');
+var connection_details = require("../modules/connection_details");
 var mysql = require('mysql');
 
 // GET checkout page.
@@ -30,10 +31,9 @@ router.post('/auth',async function(req, res, next) {
     password: connection_details.password,
     database: connection_details.database
   });
-  connection.query(getEmailUsername, async function(err, results){
-	connection.query("INSERT INTO payment(cardNum, fName, lName, secruityNum, expirayDate, customerID) VALUES (?,?,?,?,?,?)",[cardNumber,fName,lName,cvv,expiration,customerID]);
+	connection.query("INSERT INTO payment(cardNum, fName, lName, secruityNum, expiray, customerID) VALUES (?,?,?,?,?,?)",[cardNumber,fName,lName,cvv,expiration,customerID]);
   res.redirect("/account"+"?message=Order confirmed!");
-  });
 });
+
 
 module.exports = router;

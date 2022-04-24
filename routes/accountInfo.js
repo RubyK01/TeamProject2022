@@ -36,7 +36,7 @@ router.get('/', function(req, res, next) {
     lName: lName,
     userName: userName,
     message: message,
-    loggedIn: logged
+    loggedIn: loggedIn
    });
 });
 

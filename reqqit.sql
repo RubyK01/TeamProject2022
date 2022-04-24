@@ -54,7 +54,7 @@ cardNum int,
 fName varchar(255) not null,
 lName varchar(255) not null,
 secruityNum int,
-expiray date,
+expiray varchar(255) not null,
 customerID int not null,
 foreign key (customerID) references customer(customerID) on delete cascade
 );
