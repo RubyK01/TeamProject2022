@@ -1,19 +1,21 @@
 var express = require('express');
 var router = express.Router();
 var session = require('express-session');
+var connection_details = require("../modules/connection_details");
 var mysql = require('mysql');
 
-/* GET home page. */
+// GET checkout page.
 router.get('/', function(req, res, next) {
   //login checker by Tomas.
   //If the user is not logged into an account while trying to go to this page,
   //they will be taken back to the login page with the follow error message.
+  var loggedIn = req.session.loggedIn;
   if(!req.session.loggedIn === true){
     res.redirect("/login"+"?&error=Please login to view page!");
   }
-  res.render('checkOut', { title: 'cart' });
+  res.render('checkOut', { title: 'cart' ,loggedIn:loggedIn});
 });
-// the routes were done by Tomas
+
 //Made by Jamie.
 router.post('/auth',async function(req, res, next) {
 	var fName = req.body.fName;
@@ -29,13 +31,9 @@ router.post('/auth',async function(req, res, next) {
     password: connection_details.password,
     database: connection_details.database
   });
-  connection.query(getEmailUsername, async function(err, results){
-	connection.query("INSERT INTO payment(cardNum, fName, lName, secruityNum, expirayDate, customerID) VALUES (?,?,?,?,?,?)",[cardNumber,fName,lName,cvv,expiration,customerID]);
-  	if(results.length){
-  		var checkEmail = results[0].email;
-      var checkUsername = results[0].userName;
-  	}
-  });
+	connection.query("INSERT INTO payment(cardNum, fName, lName, secruityNum, expiray, customerID) VALUES (?,?,?,?,?,?)",[cardNumber,fName,lName,cvv,expiration,customerID]);
+  res.redirect("/account"+"?message=Order confirmed!");
 });
+
 
 module.exports = router;

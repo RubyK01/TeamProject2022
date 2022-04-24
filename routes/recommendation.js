@@ -6,6 +6,13 @@ var connection_details = require("../modules/connection_details");
 //By Tomas & Glen.
 //To get recommendation page.
 router.get('/', function(req, res, next) {
+  //login checker by Tomas.
+  //If the user is not logged into an account while trying to go to this page,
+  //they will be taken back to the login page with the follow error message.
+  var loggedIn = req.session.loggedIn;
+  if(!req.session.loggedIn === true){
+    res.redirect("/login"+"?&error=Please login to view page!");
+  }
   var connection = mysql.createConnection({
     host: connection_details.host,
     user: connection_details.user,
@@ -14,9 +21,10 @@ router.get('/', function(req, res, next) {
   });
   var error = req.query.error;
  // var recProducts = connection.query("SELECT * FROM recProducts");
-  res.render('recommendation', { title: 'Recommendation', error: error});
+  res.render('recommendation', { title: 'Recommendation', error: error, loggedIn:loggedIn});
 });
 
+//Tomas attempted to help Glen in getting products to recommend from the database.
 router.post('/rec', async function(req,res,next){
   var connection = mysql.createConnection({
     host: connection_details.host,

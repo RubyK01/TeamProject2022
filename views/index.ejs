@@ -57,9 +57,18 @@
             <li class="nav-item">
               <a class="nav-link" href="/recommendation">Recommendation</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/login">Login</a>
-            </li>
+            <%if(!loggedIn){ %> <!--To hide the login button after user has logged in -->
+              <li class="nav-item">
+                <a class="nav-link" href="/login">Login</a>
+              </li>
+            <% } %>
+            <%if(loggedIn){ %> <!--To show the logout button after user has logged in -->
+              <li class="nav-item">
+              <form  action="/logout" method="get">
+                <a class ="nav-link"><button class="linkButton" type="submit" value = "submit">Logout</button></a>
+              </form>
+              </li>
+            <% } %>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Products
@@ -75,9 +84,6 @@
                 <li><a class="dropdown-item" href="/storage">HardDisks/SSD</a></li>
               </ul>
             </li>
-      			<li>
-      				<button class="toggle" name="toggletheme" type="toggle" onclick="myFunction()">Theme</button>
-      			</li>
           </ul>
         </div>
       </div>

@@ -12,7 +12,8 @@ router.get('/', function(req, res, next) {
 	var pass_word = req.body.pass_word;
   var error = req.query.error;
   var message = req.query.message;
-  res.render('login', { title: 'Login', error: error, message: message });
+  var loggedIn = req.session.loggedIn;
+  res.render('login', { title: 'Login', error: error, message: message, loggedIn:loggedIn });
 });
 
 //for logining into an account

@@ -7,6 +7,7 @@ var session = require('express-session');
 //Made by Tomas.
 //to get accountInfo page.
 router.get('/', function(req, res, next) {
+  var loggedIn = req.session.loggedIn;
   var message = req.query.message;
   var connection = mysql.createConnection({
     host: connection_details.host,
@@ -34,7 +35,8 @@ router.get('/', function(req, res, next) {
     fName: fName,
     lName: lName,
     userName: userName,
-    message: message
+    message: message,
+    loggedIn: loggedIn
    });
 });
 
