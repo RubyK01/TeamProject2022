@@ -130,7 +130,7 @@ describe('signup', function(){
       testResult = false;
     }
 
-    assert.equal(testResult,true);
+    assert.equal(testResult,false);
   })
 });
 
@@ -147,6 +147,6 @@ describe('signup', function(){
       testResult = false;
     }
 
-    assert.equal(testResult,true);
+    assert.equal(testResult,false);
   })
 });

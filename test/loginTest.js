@@ -1,4 +1,4 @@
-var signup = require("../routes/login");
+var login = require("../routes/login");
 var assert = require("chai").assert;
 var bcrypt = require('bcrypt');
 
