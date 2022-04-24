@@ -11,6 +11,7 @@ var path = require('path');
 router.get('/', function(req, res, next) {
   //If the user is not logged into an account while trying to go to this page,
   //they will be taken back to the login page with the following error message.
+  var loggedIn = req.session.loggedIn;
   if(!req.session.loggedIn === true){
     res.redirect("/login"+"?&error=Please login to view page!");
   }
@@ -34,7 +35,8 @@ router.get('/', function(req, res, next) {
     message: message,
     loggedIn: loggedIn,
     products: products,
-    productIMG: productIMG
+    productIMG: productIMG,
+    loggedIn: loggedIn
   });
 });
 

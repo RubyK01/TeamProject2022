@@ -13,13 +13,14 @@ router.get('/', function(req, res, next) {
   var userName = req.body.userName;
   var email = req.body.email;
   var pass_word = req.body.pass_word;
+  var loggedIn = req.session.loggedIn;
   var connection = mysql.createConnection({
     host: connection_details.host,
     user: connection_details.user,
     password: connection_details.password,
     database: connection_details.database
   });
-  res.render('signup', { title: 'Signup' , error: error});
+  res.render('signup', { title: 'Signup' , error: error , loggedIn:loggedIn});
 });
 
 //for creating an account

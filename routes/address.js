@@ -12,6 +12,7 @@ router.get('/', function(req, res, next) {
   if(!req.session.loggedIn === true){
     res.redirect("/login"+"?&error=Please login to view page!");
   }
+  var loggedIn = req.session.loggedIn;
   var error = req.query.error;
   var message = req.query.message;
   var addressline1 = req.body.addressline1;
@@ -27,7 +28,7 @@ router.get('/', function(req, res, next) {
     database: connection_details.database
   });
   var address = connection.query("SELECT * FROM address WHERE customerID ='"+customerID+"';");
-  res.render('address', { title: 'address' , error: error, message: message, address: address});
+  res.render('address', { title: 'address' , error: error, message: message, address: address, loggedIn:loggedIn});
 });
 
 //for adding an address.

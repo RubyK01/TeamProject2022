@@ -3,9 +3,8 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'PcPartsElect' });
-  console.log("ID: "+results[0].customerID);
-  console.log("Username: "+results[0].userName);
+  var loggedIn = req.session.loggedIn;
+  res.render('index', { title: 'PcPartsElect' , loggedIn: loggedIn});
 });
 
 module.exports = router;

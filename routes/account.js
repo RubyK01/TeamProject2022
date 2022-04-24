@@ -13,7 +13,7 @@ router.get('/', function(req, res, next) {
   var userName = req.session.username;
   var error = req.query.error;
   var message = req.query.message;
-  var loggedIn = req.session.loggedIn
+  var loggedIn = req.session.loggedIn;
   res.render('account',
   { title: 'account',
     userName: userName,
