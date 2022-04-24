@@ -64,15 +64,15 @@
 	<!-- Recommendations page done by Glen-->
     <div class="content">
       <div class="main">
-	  <!-- Recommendations page by Glen -->
+	  <!-- Recommendations page below fully done by Glen - Recommendations JS page done by Tomas unfortunately does not work :/ -->
 	  <center><b><h1>Recommendations Page</h1><b><center>
 	  <br>
 			<center><h5>Hello and welcome to our recommendations page. Unsure and comfused on what pc product suits your needs? Below from the drop down menu you can select 
-				the type of PC you want desktop/laptop along with your price range. And what exactly you plan to use this pc for</h5>
+				the type of PC you want desktop/laptop along with your price range. And what exactly you plan to use this pc for</h5></center>
 	  			<table align="center" width="50%" cellpadding="8" cellspacing="8">
 			
-			<tr>
-			<td>
+	<tr>
+		<td>
 			<select id = "Recommendations" onchange = "showImages()" style=" width: 90%">
 			<option value="select">Select</option>
 			<option value="lowend1">Desktop/€400,500/Web browsing</option>
@@ -81,21 +81,21 @@
 			<option value="higherrange">Laptop/€200,500/Web browsing</option>
 			<option value="higherrange1">Laptop/€600,800/Office work</option>
 			<option value="higherrange2">Laptop/€800+/Gaming, Streaming</option>
-			<tr>
-			<td>
+	<tr>
+		<td>
 			<center><img src = "images/recommended1.png" style ="visibility: hidden;" id ="pic" width="300" height="400">
 			<img src = "images/recommended2.png" style ="visibility: hidden;" id ="pic2" width="300" height="400">
 			<img src = "images/recommended3.png" style ="visibility: hidden;" id ="pic3" width="300" height="400">
 			<img src = "images/recommended4.png" style ="visibility: hidden;" id ="pic4" width="300" height="400">
 			<img src = "images/recommended5.png" style ="visibility: hidden;" id ="pic5" width="300" height="400">
 			<img src = "images/recommended6.png" style ="visibility: hidden;" id ="pic6" width="300" height="400">
-			</td>
-			</tr>
-			</select>
-			</td>
-			</tr>
-			</table>
-			<script type="text/javascript">
+		</td>
+	</tr>
+		</select>
+		</td>
+	</tr>
+		</table>
+		<script type="text/javascript">
 			function showImages()
 			{
 				Recommendations = document.getElementById("Recommendations").value;

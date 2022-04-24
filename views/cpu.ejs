@@ -4,6 +4,7 @@
     <title>CPU</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
     <div class="logo-area">
@@ -90,7 +91,7 @@
 			</p>
 			<p>
 				<span>Number of Items</span>
-				<span>0</span>
+				<span class = "totalitems">0</span>
 			</p>
 			<p>
 				<span>VAT</span>
@@ -253,14 +254,17 @@
               <button class="reuseabale" type="button">Add to cart</button>
             </div>
           </div>
-
+				<!-- Cart functionality done by Glen-->
 		  <script>
 				var addToCartButtons = document.getElementsByClassName('reuseabale')
 				for(var i = 0; i < addToCartButtons.length; i++) {
 					var button = addToCartButtons[i]
 					button.addEventListener('click', addTocartClicked)
 
+
 				}
+
+
 					function updateCartTotal(){
 					var cartItemContainer = document.getElementsByClassName('cart')[0]
 					var cartRows = cartItemContainer.getElementsByClassName('product')
@@ -268,8 +272,7 @@
 					for (var i =0; i < cartRows.length; i++) {
 						var cartRow = cartRows[i]
 						var priceElement = cartRow.getElementsByClassName('productprice')[0]
-						var quantityElement = cartRow.getElementsByClassName('productquantity')
-						[0]
+						var quantityElement = cartRow.getElementsByClassName('productquantity')[0]
 						console.log(priceElement, quantityElement)
 						var price = parseFloat(priceElement.innerText.replace('€', ''))
 						var quantity = quantityElement.value
@@ -278,6 +281,8 @@
 						total = total + (price * quantity)
 					}
 					document.getElementsByClassName('totalprice')[0].innerText = '€' + total
+					document.getElementsByClassName('totalitems')[0].innerText = quantity = i
+
 				}
 
 
@@ -293,8 +298,10 @@
 
 				console.log(title, price, category, ImgSrc)
 				addItemToCart(title, price, category, ImgSrc)
+				updateCartTotal()
 
 				}
+
 
 				function addItemToCart(title, price, category, ImgSrc) {
 					var cartRow = document.createElement('div')
@@ -312,7 +319,7 @@
 
 					<h4 class="producttype">${category}</h4>
 
-					<input class="productquantity"Qnt: <input value="1" name="">
+					<p>Qnt:<input class="productquantity" <input value="1" name=""> </p>
 
 					<p class="productremove">
 
@@ -338,9 +345,27 @@
 					buttonClicked.parentElement.parentElement.parentElement.remove()
 					updateCartTotal()
 
-	})
+
+
+				})
 
 	}
+
+					var quantityInputs = document.getElementsByClassName('productquantity')
+						for (var i = 0; i < removeCartItems.length; i++) {
+							var input = quantityInputs[i]
+							input.addEventListener('change', quantitychanged)
+						}
+						function quantitychanged(event) {
+						var input = event.target
+						if(isNaN(input.value) || input.value <= 0) {
+								input.value = 1
+							}
+							updateCartTotal()
+						}
+
+
+
 
 				}
 
