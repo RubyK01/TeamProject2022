@@ -1,6 +1,6 @@
 # TeamProject2022
 BSc (Honours) in Computing
-Student 1: Tomas Kehoe
+Student 1: Ruby Kehoe
 Student Number:x20382263
 Student 2: Glen Williams 
 Student Number:x20377476
@@ -10,7 +10,7 @@ Student Number:x20454762
 ---
 
 # Who did what
-1. Tomas worked on the overall layout template, database, account creation / functions and login system as well as helping Glen with the recommendations.
+1. Ruby worked on the overall layout template, database, account creation / functions and login system as well as helping Glen with the recommendations.
 2. Glen worked on the products pages, cart pages and recommendation page.
 3. Jamie worked the dark theme/mode and payment.
 
